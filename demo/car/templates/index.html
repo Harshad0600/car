@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car Point</title>
+
+     <!-- Icon Font Stylesheet -->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+        integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- Template Stylesheet -->
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+
+</head>
+
+<body>
+    {% if messages %}
+    <div class="messages">
+        {% for message in messages %}
+        <div class="alert alert-{{ message.tags }}">
+            {{ message }}
+        </div>
+        {% endfor %}
+    </div>
+    {% endif %}
+    <!--Nav Bar Start-->
+
+    <header class="header">
+
+        <a href="#" class="logo">Car<span>Point</span></a>
+
+        <div class="bx bx-menu" id="nav-menu"></div>
+
+        <ul class="nav__links" id="nav-links">
+            <li><a href="{% url 'home' %}">HOME</a></li>
+            <li><a href="{% url 'about' %}">ABOUT US</a></li>
+            <li><a href="{% url 'service' %}">SERVICES</a></li>
+            <li><a href="{% url 'contact' %}">CONTACT US</a></li>
+            <!-- <li><a href="{% url 'login' %}"><button class="lbtn">Login</button></a></li> -->
+            {% if user.is_authenticated %}
+                <li><a href="{% url 'logout' %}"><button class="lobtn">Logout</button></a></li>
+            {% else %}
+                <li><a href="{% url 'login' %}"><button class="lbtn">Login</button></a></li>
+            {% endif %}
+        </ul>
+
+    </header>
+
+    <!--Nav Bar End-->
+
+    <!--Home Start-->
+    <!-- {% block content %} -->
+    <section class="home" id="home">
+        <div class="home-text">
+            <h1 style="position: absolute;bottom: 110%;">Welcome to CarPoint, {{ username }}</h1>
+            <h1><span>Car</span> Service<br>And Maintainence</h1>
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit <br>Nobis dolor inventore quas molestiae animi
+                sapiente.</p>
+            <a href="" class="home-btn">OUR SERVICES</a>
+        </div>
+    </section>
+    <!-- {% endblock %} -->
+
+    <!--Home End-->
+
+    <!--About Us Start-->
+
+    <section class="about" id="about">
+        <div class="row">
+            <div class="about-img">
+                <img src="{% static './about-img.png' %}" alt="Image Not Found">
+            </div>
+            <div class="about-text">
+                <h2>About <span>Us</span></h2>
+                <p>Words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum,
+                    you
+                    need to be sure there isn't anything embarrassing hidden in the middle of text. All Lorem Ipsum
+                    generators on the Internet tend to repeat predefined chunks.</p>
+                <button>Read More</button>
+            </div>
+        </div>
+    </section>
+
+    <!--About Us End-->
+
+    <!--Service Start-->
+
+    <section class="services" id="services">
+        <h1 class="our-ser"><span>Our</span> Services</h1>
+        <div class="box-container">
+            <div class="box" data-delay="0.1s">
+                <div class="ser-image">
+                    <img src="{% static './service-1.jpg' %}" alt="">
+                    <h4>Wheel Alignment</h4>
+                    <p>Lorem ipsum dolor sit amet consectetur <br>tend to repeat adipisicing elit.</p>
+                    <a href="">Read More</a>
+                </div>
+            </div>
+
+            <div class="box">
+                <div class="ser-image">
+                    <img src="{% static './service-2.jpg' %}" alt="">
+                    <h4>Electrical System Repair</h4>
+                    <p>Lorem ipsum dolor sit amet consectetur <br>tend to repeat adipisicing elit.</p>
+                    <a href="">Read More</a>
+                </div>
+            </div>
+
+            <div class="box">
+                <div class="ser-image">
+                    <img src="{% static './service-3.jpg' %}" alt="">
+                    <h4>System Service</h4>
+                    <p>Lorem ipsum dolor sit amet consectetur <br>tend to repeat adipisicing elit.</p>
+                    <a href="">Read More</a>
+                </div>
+            </div>
+
+            <div class="box">
+                <div class="ser-image">
+                    <img src="{% static './service-4.jpg' %}" alt="">
+                    <h4>General Maintenance</h4>
+                    <p>Lorem ipsum dolor sit amet consectetur <br>tend to repeat adipisicing elit.</p>
+                    <a href="">Read More</a>
+                </div>
+            </div>
+
+            <div class="box">
+                <div class="ser-image">
+                    <img src="{% static './service6.jpg' %}" alt="">
+                    <h4>Tire Repair and Replacement</h4>
+                    <p>Lorem ipsum dolor sit amet consectetur <br>tend to repeat adipisicing elit.</p>
+                    <a href="">Read More</a>
+                </div>
+            </div>
+
+            <div class="box">
+                <div class="ser-image">
+                    <img src="{% static './service7.webp' %}" alt="">
+                    <h4>Engine Repair</h4>
+                    <p>Lorem ipsum dolor sit amet consectetur <br>tend to repeat adipisicing elit.</p>
+                    <a href="">Read More</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!--Service End-->
+
+    <!-- Project Start-->
+
+    <section class="project" id="project">
+        <h1 class="pheading">Latest <span>Projects</span> We <br>Have Done</h1>
+        <div class="box-container">
+            <div class="box">
+                <div class="work-image">
+                    <img src="{% static './work-1.jpg' %}" alt="">
+                    <h4><span>Auto Repair</span></h4>
+                    <p>Engine Repair</p>
+                    <a href="">Read More</a>
+                </div>
+            </div>
+
+            <div class="box">
+                <div class="work-image">
+                    <img src="{% static './work-2.jpg' %}" alt="">
+                    <h4><span>Auto Repair</span></h4>
+                    <p>Car Tyre Change</p>
+                    <a href="">Read More</a>
+                </div>
+            </div>
+
+            <div class="box">
+                <div class="work-image">
+                    <img src="{% static './work-3.jpg' %}" alt="">
+                    <h4><span>Auto Repair</span></h4>
+                    <p>Battery Adjust</p>
+                    <a href="">Read More</a>
+                </div>
+            </div>
+    </section>
+
+    <!-- Project End-->
+
+    <!-- Contact Form-->
+
+        <section class="contact" id="contact">
+            <h1 class="heading">Get <span>In</span> Touch</h1>
+    
+            <div class="row">
+    
+                <form action="{% url 'booking' %}" method="POST">
+                    {% csrf_token %}
+                    <input type="text" placeholder="Name" id="" class="box" name="uname" required>
+                    <input type="email" placeholder="Email" id="" class="box" name="mail">
+                    <input type="tel" placeholder="Number" id="" class="box" name="mobile">
+                    <select name="option" class="box">
+                        <option value="" selected disabled hidden>Choose a Service</option>
+                        <option value="Wheel Alignment">Wheel Alignment</option>
+                        <option value="Electrical System Repair">Electrical System Repair</option>
+                        <option value="System Service">System Service</option>
+                        <option value="General Maintenance">General Maintenance</option>
+                        <option value="Tire Repair and Replacement">Tire Repair and Replacement</option>
+                        <option value="Engine Repair">Engine Repair</option>
+                    </select>
+                    <textarea class="box" placeholder="Message" id="" cols="30" rows="10" name="note"></textarea>
+                    <input type="submit" value="Submit" class="btn">
+                </form>
+    
+                <div class="map">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d102449.26376435741!2d78.42185291261413!3d17.39769485597229!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb99daeaebd2c7%3A0xae93b78392bafbc2!2sHyderabad%2C%20Telangana!5e0!3m2!1sen!2sin!4v1719728492784!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+        </section>
+
+    <!--Contact Form-->
+
+    <!-- Footer Start-->
+
+        <section id="last">
+            <div class="footer">
+                <div class="main">
+    
+                    <div class="list">
+                        <h4>Quick Links</h4>
+                        <ul>
+                            <li><a href="">About Us</a></li>
+                            <li><a href="">Terms & Conditions</a></li>
+                            <li><a href="">Privacy Policy</a></li>
+                            <li><a href="">Help</a></li>
+                            <li><a href="">Services</a></li>
+                        </ul>
+                    </div>
+    
+                    <div class="list">
+                        <h4>Support</h4>
+                        <ul>
+                            <li><a href="">About Us</a></li>
+                            <li><a href="">Terms & Conditions</a></li>
+                            <li><a href="">Privacy Policy</a></li>
+                            <li><a href="">Help</a></li>
+                            <li><a href="">Services</a></li>
+                        </ul>
+                    </div>
+    
+                    <div class="list">
+                        <h4>Contact Info</h4>
+                        <ul>
+                            <li><a href="">98 West 21st Street</a></li>
+                            <li><a href="">Kukatpally Hyd 506106</a></li>
+                            <li><a href="">9876541258</a></li>
+                            <li><a href="">abc@gmail.com</a></li>
+                            <li><a href="">546-8790</a></li>
+                        </ul>
+                    </div>
+    
+                    <div class="list">
+                        <h4>Connect</h4>
+                        <div class="social">
+                            <a href=""><i class="fa-brands fa-facebook-f"></i></a>
+                            <a href=""><i class="fa-brands fa-instagram"></i></a>
+                            <a href=""><i class="fa-brands fa-twitter"></i></a>
+                            <a href=""><i class="fa-brands fa-linkedin-in"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="end-text">
+                <p>Copyright ©2024 All Rights Reserved</p>
+            </div>
+        </section>
+
+    <!-- Footer End-->
+    
+    <script src="{% static 'script.js' %}"></script>
+</body>
+
+</html>

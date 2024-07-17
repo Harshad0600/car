@@ -1,0 +1,99 @@
+@import url("https://fonts.googleapis.com/css2? family=Poppins:wght@300;400;500;600;700;800;9008 display=swap");
+*{
+    margin: 0;
+    border: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: url(./scar.jpg);
+    background-size: cover;
+    background-position: center;
+}
+.swrapper{
+    width: 420px;
+    background: transparent;
+    border: 2px solid rgba(255, 255, 255, .2);
+    backdrop-filter: blur(15px);
+    box-shadow: 0 0 10px rgba(0, 0, 0, .2);
+    color: #fff;
+    border-radius: 10px;
+    padding: 30px 40px;
+}
+.swrapper h1{
+    font-size: 36px;
+    text-align: center;
+}
+.swrapper .output-box{
+    position: relative;
+    width: 100%;
+    height: 50px;
+    margin: 30px 0;
+}
+.output-box input{
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    border: none;
+    outline: none;
+    border: 2px solid rgba(255, 255, 255, .2);
+    border-radius: 40px;
+    font-size: 16px;
+    color: #fff;
+    padding: 20px 45px 20px 20px;
+}
+.output-box input::placeholder{
+    color: #fff;
+}
+.output-box i{
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 20px;
+}
+.swrapper .terms{
+    display: flex;
+    justify-content: space-between;
+    font-size: 14.5px;
+    margin: -13px 7px 15px;
+}
+.terms label input{
+    accent-color: red;
+    margin-right: 3px;
+}
+.swrapper .sbtn{
+    width: 100%;
+    height: 45px;
+    background: #fff;
+    border: none;
+    outline: none;
+    border-radius: 40px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, .1);
+    cursor: pointer;
+    font-size: 16px;
+    color: #333;
+    font-weight: 600;
+}
+.swrapper .sbtn:hover{
+    background-color: red;
+    color: #fff;
+}
+.swrapper .lgin{
+    font-size: 14.5px;
+    text-align: center;
+    margin: 20px 0 15px;
+}
+.lgin p a{
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+}
+.lgin p a:hover{
+    text-decoration: underline;
+}
